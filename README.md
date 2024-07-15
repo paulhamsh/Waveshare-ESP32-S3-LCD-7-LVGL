@@ -1,0 +1,2 @@
+# Waveshare-ESP32-S3-LCD-7-LVGL
+Waveshare ESP32 S3 LCD 7 LVGL
