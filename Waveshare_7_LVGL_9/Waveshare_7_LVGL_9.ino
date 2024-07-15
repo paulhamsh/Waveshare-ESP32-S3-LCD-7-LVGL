@@ -33,7 +33,7 @@ static const uint32_t screenWidth = 800;
 static const uint32_t screenHeight = 480;
 //int buf_size_in_bytes;
 static const int buf_size_in_bytes = screenWidth * screenHeight * sizeof(lv_color_t) / 10;
-static lv_color_t *disp_draw_buf;
+static lv_color_t *disp_draw_buf, *disp_draw_buf2;
 // Use below if not dynamically allocating memory
 //static uint16_t disp_draw_buf[buf_size_in_bytes / sizeof(lv_color_t)];
 
@@ -83,9 +83,13 @@ void setup()
   lv_init();
 
 #ifdef ESP32
+  Serial.println("ESP32 capability draw buffer malloc()");
   disp_draw_buf = (lv_color_t *) heap_caps_malloc(buf_size_in_bytes, MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
+  disp_draw_buf2 = (lv_color_t *) heap_caps_malloc(buf_size_in_bytes, MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
 #else
+  Serial.println("Normal draw buffer malloc()");
   disp_draw_buf = (lv_color_t *) malloc(buf_size_in_bytes);
+  disp_draw_buf2 = (lv_color_t *) malloc(buf_size_in_bytes);
 #endif
 
   if (disp_draw_buf == nullptr)
@@ -98,7 +102,7 @@ void setup()
 
   disp = lv_display_create(screenWidth, screenHeight);
   lv_display_set_flush_cb(disp, my_disp_flush);
-  lv_display_set_buffers(disp, disp_draw_buf, NULL, buf_size_in_bytes, LV_DISPLAY_RENDER_MODE_PARTIAL);
+  lv_display_set_buffers(disp, disp_draw_buf, disp_draw_buf2, buf_size_in_bytes, LV_DISPLAY_RENDER_MODE_PARTIAL);
 
 
   indev = lv_indev_create();
