@@ -5,10 +5,7 @@ Waveshare ESP32 S3 LCD 7 LVGL
 
 ## Useful information
 
-
-
-These boards come in different types   
-These are useful sites for explaining the differences:   
+https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-7
 
  
 
