@@ -13,7 +13,7 @@ https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/blob/m
  
 
 <p align="center">
-  <img src="https://github.com/paulhamsh/Waveshare-ESP32-S3-LCD-7-LVGL/blob/main/waveshare-7.jpg" width="400" title="Waveshare ESP32 S3 LCD 7\"">
+  <img src="https://github.com/paulhamsh/Waveshare-ESP32-S3-LCD-7-LVGL/blob/main/waveshare-7.jpg" width="400" title="Waveshare ESP32 S3 LCD 7">
 </p>
 
-These boards come in different types   
+  
