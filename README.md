@@ -17,3 +17,35 @@ https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/blob/m
 </p>
 
   
+## Build LVGL demos with v9.1.0
+
+Board manager: ESP32 S3 Dev Module   
+esp32 version 2.0.16   
+Arduino IDE:   2.3.2   
+
+Install Arduino libraries:
+```
+  lvgl                                            version 9.1.0
+  GFX Library for Arduino by Moon On Our Nation   version 1.4.7
+  TAMC-GT911                                      version 1.0.2
+```
+
+For Arduino IDE select:
+```
+Flash Size: 8MB(64Mb)
+PSRAM: "OPI PSRAM"
+```
+
+Download the code in ```Waveshare_7_LVGL_9``` folder
+
+Copy ```Arduino\libraries\lvgl\lv_conf_template.h``` to ```src\lv_conf.h```   
+Copy folders ```Arduino\libraries\lvgl\demos``` and ```Arduino\libraries\lvgl\examples```  to ```Arduino\libraries\lvgl\src```     
+
+Edit ```lv_conf.h```    
+```
+#if 1 /*Set it to "1" to enable content*/
+#define LV_USE_DEMO_WIDGETS 1
+#define LV_FONT_MONTSERRAT_24 1
+```
+
+Compile and run.    
