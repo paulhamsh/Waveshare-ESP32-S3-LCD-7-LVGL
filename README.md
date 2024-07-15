@@ -7,6 +7,9 @@ Waveshare ESP32 S3 LCD 7 LVGL
 
 https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-7
 
+
+https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/blob/main/Examples/Arduino_GFX/GFX.ino
+
  
 
 <p align="center">
