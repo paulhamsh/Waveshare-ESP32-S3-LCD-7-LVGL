@@ -3,10 +3,12 @@
 #include <Arduino_GFX_Library.h>
 
 
+// redefine this in lv_code.ino
+void lv_my_setup();
+
+
 #define GFX_DEV_DEVICE WAVESHARE_ESP32_S3_TFT_7
 #define GFX_BL (-1)
-
-
 
 Arduino_ESP32RGBPanel *rgbpanel = new Arduino_ESP32RGBPanel(
      5 /* DE */,3 /* VSYNC */, 46 /* HSYNC */, 7 /* PCLK */,
@@ -47,8 +49,6 @@ void my_disp_flush(lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)
   lv_disp_flush_ready(disp);
 }
 
-
-
 void my_touchpad_read(lv_indev_t *indev_driver, lv_indev_data_t *data)
 {
   if (touch_touched()) {
@@ -62,17 +62,17 @@ void my_touchpad_read(lv_indev_t *indev_driver, lv_indev_data_t *data)
     data->state = LV_INDEV_STATE_REL;
 }
 
+
 lv_display_t *disp;
 lv_indev_t   *indev;
+
 
 void setup()
 {
   Serial.begin(115200);
-  Serial.println("LVGL Widgets Demo");
 
   gfx->begin();
   gfx->fillScreen(RED);
-
 
 #ifdef GFX_BL
   pinMode(GFX_BL, OUTPUT);
@@ -98,25 +98,31 @@ void setup()
     while (1);
   }
 
+  if (disp_draw_buf2 == nullptr)
+  {
+    Serial.println("LVGL disp_draw_buf2 allocate failed - carry on anyway we can live without it");
+  }
+
+
+  // set up LVGL
   lv_tick_set_cb(my_tick_function);
 
   disp = lv_display_create(screenWidth, screenHeight);
   lv_display_set_flush_cb(disp, my_disp_flush);
   lv_display_set_buffers(disp, disp_draw_buf, disp_draw_buf2, buf_size_in_bytes, LV_DISPLAY_RENDER_MODE_PARTIAL);
 
-
   indev = lv_indev_create();
   lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);
   lv_indev_set_read_cb(indev, my_touchpad_read);
 
-  lv_demo_widgets();
+  //lv_demo_widgets();
 
-
-  Serial.println("Setup done");
+  // do my setup
+  lv_my_setup();
 }
 
 void loop()
 {
-  lv_timer_handler(); /* let the GUI do its work */
+  lv_timer_handler(); 
   delay(5);
 }
