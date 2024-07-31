@@ -16,8 +16,18 @@ https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/blob/m
   <img src="https://github.com/paulhamsh/Waveshare-ESP32-S3-LCD-7-LVGL/blob/main/waveshare-7.jpg" width="400" title="Waveshare ESP32 S3 LCD 7">
 </p>
 
+## Example code with Lovyan GFX (from  @Wesctott1)
+
+In ``L`ovyanGFX``` folder.       
+
+Code adapted from @Wesctott1 (there was no license so hopefully ok to edit and republish)    
+
+https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/tree/main    
+    
   
-## Build LVGL demos with v9.1.0
+## Build LVGL demos with v9.1.0 and GFX Library for Arduino
+
+In ```Waveshare_7_LVGL_9``` folder     
 
 Board manager: ESP32 S3 Dev Module   
 esp32 version 2.0.16   
@@ -36,7 +46,7 @@ Flash Size: 8MB(64Mb)
 PSRAM: "OPI PSRAM"
 ```
 
-Download the code in ```Waveshare_7_LVGL_9``` folder
+Download the code in ```Waveshare_7_LVGL_9``` folder    
 
 Copy ```Arduino\libraries\lvgl\lv_conf_template.h``` to ```src\lv_conf.h```   
 Copy folders ```Arduino\libraries\lvgl\demos``` and ```Arduino\libraries\lvgl\examples```  to ```Arduino\libraries\lvgl\src```     
