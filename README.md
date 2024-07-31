@@ -18,7 +18,7 @@ https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/blob/m
 
 ## Example code with Lovyan GFX (from  @Wesctott1)
 
-In ``L`ovyanGFX``` folder.       
+In ```LovyanGFX``` folder.       
 
 Code adapted from @Wesctott1 (there was no license so hopefully ok to edit and republish)    
 
