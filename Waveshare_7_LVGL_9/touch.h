@@ -15,7 +15,6 @@
 #define TOUCH_MAP_Y1 480
 #define TOUCH_MAP_Y2 0
 
-
 int touch_last_x = 0, touch_last_y = 0;
 
 #include <Wire.h>
@@ -25,8 +24,33 @@ TAMC_GT911 ts = TAMC_GT911(TOUCH_GT911_SDA, TOUCH_GT911_SCL, TOUCH_GT911_INT, TO
 void touch_init()
 {
 
+  // Find the GT911 at either 0x5D or 0x14 - given we aren't using the IO expander to reset the GT911
+
   Wire.begin(TOUCH_GT911_SDA, TOUCH_GT911_SCL);
-  ts.begin();
+
+  byte error;
+  bool done;
+  done = false;
+  int gt_addr[]{GT911_ADDR1, GT911_ADDR2};
+  int addr;
+
+  for (int i = 0; (i < 2) && !done; i++) {
+    int addr = gt_addr[i];  
+    Wire.beginTransmission(addr);
+    error =  Wire.endTransmission();
+    if (error == 0) {
+      Serial.print("GT911 found at 0x");
+      Serial.println(addr, HEX);
+      ts.begin(addr);
+      done = true;
+    }
+  }
+
+  if (!done) {
+    Serial.println("NO GT911 FOUND!");
+  }
+
+  //ts.begin();
   ts.setRotation(TOUCH_GT911_ROTATION);
 }
 
