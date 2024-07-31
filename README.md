@@ -23,7 +23,10 @@ In ```LovyanGFX``` folder.
 Code adapted from @Wesctott1 (there was no license so hopefully ok to edit and republish)    
 
 https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino/tree/main    
-    
+
+```
+  LovyanGFX                version 1.1.16
+```
   
 ## Build LVGL demos with v9.1.0 and GFX Library for Arduino
 
