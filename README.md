@@ -30,9 +30,6 @@ Flash Size: 8MB(64Mb)
 PSRAM: "OPI PSRAM"
 ```
 
-
-```
-
 ## Example code with Lovyan GFX (from  @Wesctott1)
 
 In ```LovyanGFX``` folder.       
