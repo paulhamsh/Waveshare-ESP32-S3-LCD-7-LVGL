@@ -3,40 +3,12 @@
 #include <Arduino_GFX_Library.h>
 #include <Arduino.h>
 
-// Extend IO Pin define
-
-/*
-#define TP_RST   (1)
-#define LCD_BL   (2)
-#define LCD_RST  (3)
-#define SD_CS    (4)
-#define USB_SEL  (5)
-*/
-
-#define TP_RST   (1ULL << 1)
-#define LCD_BL   (1ULL << 2)
-#define LCD_RST  (1ULL << 3)
-#define SD_CS    (1ULL << 4)
-#define USB_SEL  (1ULL << 5)
-
-/*
-#define TP_RST   (1ULL << 0)
-#define LCD_BL   (1ULL << 1)
-#define LCD_RST  (1ULL << 2)
-#define SD_CS    (1ULL << 3)
-#define USB_SEL  (1ULL << 4)
-*/
-
-#include <ESP_IOExpander_Library.h>
 #include "Wire.h"
 
-#define I2C_MASTER_NUM              I2C_NUM_0
+#define I2C_MASTER_NUM      I2C_NUM_0
 #define I2C_MASTER_SDA_IO   8
 #define I2C_MASTER_SCL_IO   9
 #define GPIO_INPUT_IO_4     4
-//#define GPIO_INPUT_PIN_SEL  1ULL << GPIO_INPUT_IO_4
-//#define ESP_IO_EXPANDER_I2C_CH422G_ADDRESS 0x24
-//#define ESP_PANEL_EXPANDER_I2C_ADDRESS          (0x24)
 
 // redefine this in lv_code.ino
 void lv_my_setup();
@@ -103,25 +75,6 @@ void setup()
 {
   Serial.begin(115200);
   pinMode(GPIO_INPUT_IO_4, OUTPUT);
-
-  /*
-  //ESP_IOExpander *expander = new ESP_IOExpander_CH422G((i2c_port_t)I2C_MASTER_NUM, ESP_IO_EXPANDER_I2C_CH422G_ADDRESS_000, I2C_MASTER_SCL_IO, I2C_MASTER_SDA_IO);
-  //ESP_IOExpander *expander = new ESP_IOExpander_CH422G((i2c_port_t)I2C_MASTER_NUM, ESP_IO_EXPANDER_I2C_CH422G_ADDRESS_000);
-  ESP_IOExpander *expander = new ESP_IOExpander_CH422G((i2c_port_t)I2C_MASTER_NUM, ESP_IO_EXPANDER_I2C_CH422G_ADDRESS_000, 9, 8);
-  
-  expander->init();
-  expander->begin();
-  expander->multiPinMode(TP_RST | LCD_BL | LCD_RST | SD_CS | USB_SEL, OUTPUT);
-  expander->multiDigitalWrite(TP_RST | LCD_BL | LCD_RST, HIGH);
-  delay(100);  
-  expander->multiDigitalWrite(TP_RST | LCD_RST, LOW);
-  delay(100);
-  digitalWrite(GPIO_INPUT_IO_4, LOW);
-  delay(100);
-  expander->multiDigitalWrite(TP_RST | LCD_RST, HIGH);
-  delay(200);
-  */
-
 
   gfx->begin();
   gfx->fillScreen(RED);

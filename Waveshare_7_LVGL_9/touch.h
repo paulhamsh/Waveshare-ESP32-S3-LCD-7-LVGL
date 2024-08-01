@@ -25,7 +25,8 @@ void touch_init()
 {
 
   // Find the GT911 at either 0x5D or 0x14 - given we aren't using the IO expander to reset the GT911
-
+  
+  // Comment this out if using the IO Expander code
   Wire.begin(TOUCH_GT911_SDA, TOUCH_GT911_SCL);
 
   byte error;
