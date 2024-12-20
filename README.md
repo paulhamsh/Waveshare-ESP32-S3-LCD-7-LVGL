@@ -93,7 +93,26 @@ Compile and run.
 
 ## Confusion over pin numbers in Waveshare documentation   
 
-Name | Waveshare pin | ArduinoGFX pin | LoyanGFX pin
------|---------------|----------------|-------------
-  x  |     x         |    x           |    x         
+Pin  | Waveshare      | Arduino_ESP32RGB | LoyanGFX 
+-----|----------------|------------------|-------------
+  0  |     G3         |    G1            |    G1   
+  1  |     R3         |    R0            |    R0   
+  2  |     R4         |    R1            |    R1      
+  3  |     VSYNC      |    VSYNC         |    VSYNC       
+  5  |     DE         |    DE            |    HENABLE      
+  7  |     PCLK       |    PCLK          |    PCLK       
+ 10  |     B7         |    B4            |    B4       
+ 14  |     B3         |    B0            |    B0       
+ 17  |     B6         |    B3            |    B3     
+ 18  |     B5         |    B2            |    B2    
+ 21  |     G7         |    G5            |    G5       
+ 38  |     B4         |    B1            |    B1   
+ 39  |     G2         |    G0            |    G0
+ 40  |     R7         |    R4            |    R4       
+ 41  |     R6         |    R3            |    R3      
+ 42  |     R5         |    R2            |    R2       
+ 45  |     G4         |    G2            |    G2       
+ 46  |     HSYNC      |    HSYNC         |    HSYNC     
+ 47  |     G6         |    G4            |    G4    
+ 48  |     G5         |    G3            |    G3       
       
