@@ -90,3 +90,10 @@ Edit ```lv_conf.h```
 ```
 
 Compile and run.    
+
+## Confusion over pin numbers in Waveshare documentation   
+
+Name | Waveshare pin | ArduinoGFX pin | LoyanGFX pin
+-----|---------------|----------------|-------------
+      |                |              |             
+      
