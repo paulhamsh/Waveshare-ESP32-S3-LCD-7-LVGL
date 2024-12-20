@@ -95,5 +95,5 @@ Compile and run.
 
 Name | Waveshare pin | ArduinoGFX pin | LoyanGFX pin
 -----|---------------|----------------|-------------
-      |                |              |             
+  x  |     x         |    x           |    x         
       
