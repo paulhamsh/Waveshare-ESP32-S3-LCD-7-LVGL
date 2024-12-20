@@ -116,3 +116,10 @@ Pin  | Waveshare      | Arduino_ESP32RGB | LoyanGFX
  47  |     G6         |    G4            |    G4    
  48  |     G5         |    G3            |    G3       
       
+
+### Waveshare pin name mapping
+
+```
+Wavehare   G2 G3 G4 G5 G6 G7     R3 R4 R5 R6 R7    B3 B4 B5 B6 B7
+Others     G0 G1 G2 G3 G4 G5     R0 R1 R2 R3 R4    B0 B1 B2 B3 B4
+```
